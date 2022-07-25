@@ -67,6 +67,7 @@
     justify-items: center;
   }
   .links-cont .links {
+
     margin: 15px 0;
     padding: 12px;
     border-radius: 100%;
@@ -80,6 +81,7 @@
     &:hover {
       background-color: $color-white;
       transition: 0.35s;
+      cursor: pointer;
     }
 
     &:hover > .icons {

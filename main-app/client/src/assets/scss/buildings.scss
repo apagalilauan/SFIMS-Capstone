@@ -149,6 +149,7 @@
 .bldgcontent-container{
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     .bldg{
         #bldg-title{
@@ -183,7 +184,7 @@
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
     .bldgcontent-container{
         display: flex;
         flex-direction: column;
