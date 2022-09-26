@@ -41,7 +41,7 @@
 
 .main-cont{
     margin-top: -70px;
-    margin-left: -50px;
+    margin-left: -20px;
     width: 100%;
     justify-content: end;
     display: flex;
@@ -54,22 +54,35 @@
         gap: 0 10px;
         border-radius: 100px;
         background-color: $color-blue;
-        
-        p{
-            color: $color-white;
-            font-size: 19px;
-            font-weight: 600;
-        }
-        svg{
-            fill: $color-white;
-            width: 30px;
-        }
-
-        &:hover{
-            background-color: $color-yellow;
-            cursor: pointer;
-        }
     }
+
+    .btnSchedule{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: 60px;
+        width: 300px;
+        gap: 0 10px;
+        border-radius: 100px;
+        background-color: $color-blue;
+        margin-left: 15px;
+    }
+        
+    p{
+        color: $color-white;
+        font-size: 19px;
+        font-weight: 600;
+    }
+    svg{
+        fill: $color-white;
+        width: 30px;
+    }
+
+    &:hover{
+        background-color: $color-yellow;
+        cursor: pointer;
+    }
+
 }
 
 .circles{

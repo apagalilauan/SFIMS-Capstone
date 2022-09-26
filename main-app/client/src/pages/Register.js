@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import '../assets/scss/register.scss'
-import logo from '../assets/images/logo.png'
+import logo from '../assets/images/logo.png';
+import SideNav from './Sidenav';
+
 
 function App() {
   // declaring all data to be caught in the form
@@ -129,172 +131,172 @@ function App() {
   }
 
   return (
-  <body>
     <div>
-      <div class="logo">
-          <img src={logo} alt="" />
+      <div id='side'>
+        <SideNav />
       </div>
-      <div class="main-reg">
-          <div class="reg-container">
-            <div class="reg-wrap">
-                  <div class="reg-branding">
-                      <h1>ACCOUNT</h1>
-                      <h1>REGISTRATION</h1>
-                      <p> PLEASE ENTER USER CREDENTIALS</p>
-                      {errForm && <div className="form-error"> {errForm} </div>}
-                  </div>
-                  <form onSubmit={registerUser}>
-                    <div class="reg-inputs-cont">
-                        <div class="reg-inputs">
-                            <label for="idnum">ID Number</label>                        
-                            <input
-                            id='idnum' name="IDNum"
-                            value = {idnum}
-                            onChange = {(e) => setIDNum(e.target.value)}
-                            type="text"
-                            placeholder="Enter ID Number"
-                            required
-                            onInvalid={e => e.target.setCustomValidity('Please enter ID Number')}
-                            onInput={e => e.target.setCustomValidity('')}
-                            />
-                            <br />
-                            {errIdnum && <div className="error"> {errIdnum} </div>}
-                        </div>
+      <body>
+        <div>
+          <div class="main-reg">
+              <div class="reg-container">
+                <div class="reg-wrap">
+                      <div class="reg-branding">
+                          <h1>ACCOUNT</h1>
+                          <h1>REGISTRATION</h1>
+                          <p> PLEASE ENTER USER CREDENTIALS</p>
+                          {errForm && <div className="form-error"> {errForm} </div>}
+                      </div>
+                      <form onSubmit={registerUser}>
+                        <div class="reg-inputs-cont">
+                          <div className='form-left'>
+                            <div class="reg-inputs">
+                                <label for="idnum">ID Number</label>                        
+                                <input
+                                id='idnum' name="IDNum"
+                                value = {idnum}
+                                onChange = {(e) => setIDNum(e.target.value)}
+                                type="text"
+                                placeholder="Enter ID Number"
+                                required
+                                onInvalid={e => e.target.setCustomValidity('Please enter ID Number')}
+                                onInput={e => e.target.setCustomValidity('')}
+                                />
+                                <br />
+                                {errIdnum && <div className="error"> {errIdnum} </div>}
+                            </div>
 
-                        <div class="reg-inputs">
-                            <label for="pass">Password</label>
-                            <input
-                            id='pass' name="Pass"
-                            value = {pass}
-                            onChange = {(e) => setPass(e.target.value)}
-                            type="password"
-                            placeholder="Enter Password"
-                            min={6}
-                            required                            
-                            onInvalid={e => e.target.setCustomValidity('Please enter Password')}
-                            onInput={e => e.target.setCustomValidity('')} />
-                            <br />
-                            {errPass && <div className="error"> {errPass} </div>}
-                        </div>
-                        <div class="reg-inputs">
-                            <label for="pass">Confirm Password</label>
-                            <input
-                            id='pass' name="Pass"
-                            value = {cpass}
-                            onChange = {(e) => setCPass(e.target.value)}                 
-                            type="password"
-                            placeholder="Re-type Password"
-                            required
-                            onInvalid={e => e.target.setCustomValidity('Please re-type password')}
-                            onInput={e => e.target.setCustomValidity('')}  />
-                            <br />
-                            {errCpass && <div className="error"> {errCpass} </div>}
-                        </div>
+                            <div class="reg-inputs">
+                                <label for="pass">Password</label>
+                                <input
+                                id='pass' name="Pass"
+                                value = {pass}
+                                onChange = {(e) => setPass(e.target.value)}
+                                type="password"
+                                placeholder="Enter Password"
+                                min={6}
+                                required                            
+                                onInvalid={e => e.target.setCustomValidity('Please enter Password')}
+                                onInput={e => e.target.setCustomValidity('')} />
+                                <br />
+                                {errPass && <div className="error"> {errPass} </div>}
+                            </div>
+                            <div class="reg-inputs">
+                                <label for="pass">Confirm Password</label>
+                                <input
+                                id='pass' name="Pass"
+                                value = {cpass}
+                                onChange = {(e) => setCPass(e.target.value)}                 
+                                type="password"
+                                placeholder="Re-type Password"
+                                required
+                                onInvalid={e => e.target.setCustomValidity('Please re-type password')}
+                                onInput={e => e.target.setCustomValidity('')}  />
+                                <br />
+                                {errCpass && <div className="error"> {errCpass} </div>}
+                            </div>
 
-                        <div class="reg-inputs">
-                            <label for="Role">Role</label>
-                            <select
-                            id="role" name="Role"
-                            value = {role}
-                            onChange = {(e) => setRole(e.target.value)}
-                            required
-                            type="text">
-                              <option>- - -</option>
-                              <option>Faculty</option>
-                              <option>Student</option>
-                            </select>
-                            <br />
-                            {errRole && <div className="error"> {errRole} </div>}
+                            <div class="reg-inputs">
+                                <label for="Role">Role</label>
+                                <select
+                                id="role" name="Role"
+                                value = {role}
+                                onChange = {(e) => setRole(e.target.value)}
+                                required
+                                type="text">
+                                  <option>- - -</option>
+                                  <option>Faculty</option>
+                                  <option>Student</option>
+                                </select>
+                                <br />
+                                {errRole && <div className="error"> {errRole} </div>}
+                            </div>
+                            </div>
+
+                            <div className='form-right'>
+                            <div class="reg-inputs">
+                                <label for="fname" >First Name</label>
+                                <input
+                                id="fname" name="FName"
+                                value = {fname}
+                                onChange = {(e) => setFName(e.target.value)}
+                                type="text"
+                                placeholder="Enter First Name"
+                                required
+                                onInvalid={e => e.target.setCustomValidity('Please enter First Name')}
+                                onInput={e => e.target.setCustomValidity('')}  />
+                                <br />
+                                {errFname && <div className="error"> {errFname} </div>}
+                            </div>
+                            <div class="reg-inputs">
+                                <label for="MI">Middle Initial</label>
+                                <input
+                                id="midi" name="MiddleInitial"
+                                value = {midi}
+                                onChange = {(e) => setMidI(e.target.value)}
+                                type="text"
+                                required
+                                onInvalid={e => e.target.setCustomValidity('Please enter Middle Initial')}
+                                onInput={e => e.target.setCustomValidity('')}
+                                placeholder="Enter Middle Initial"
+                                maxLength={2}
+                                />
+                                <br />
+                                {errMidi && <div className="error"> {errMidi} </div>}
+                            </div>
+                            <div class="reg-inputs">
+                                <label for="lname">Last Name</label>
+                                <input
+                                id="lname" name="LName"
+                                value = {lname}
+                                onChange = {(e) => setLName(e.target.value)}
+                                type="text"
+                                placeholder="Enter Last Name"
+                                required
+                                onInvalid={e => e.target.setCustomValidity('Please enter Last Name')}
+                                onInput={e => e.target.setCustomValidity('')}  />
+                                <br />
+                                {errLname && <div className="error"> {errLname} </div>}
+                            </div>          
+                              <div class="reg-inputs">
+                                  <label for="Dept">Department</label>
+                                  <select
+                                  id="dept" name="Department"
+                                  value = {dept}
+                                  onChange={changeSelectOptionHandler}
+                                  type="text"
+                                  required
+                                  placeholder="Enter Department">
+                                    <option>- - -</option>
+                                    <option>SEAITE</option>
+                                    <option>SABH</option>
+                                    <option>SEAS</option>
+                                    <option>SHAS</option>
+                                  </select>
+                                  <br />
+                                  {errDept && <div className="error"> {errDept} </div>}
+                              </div>
+                              </div>
+                              <div class="reg-inputs">
+                                  <label for="Org">Organization</label>
+                                  <select id="org" name="Organization"
+                                  onChange = {(e) => setOrg(e.target.value)}
+                                  type="text"
+                                  placeholder="Enter Organization">
+                                    {orgs}
+                                  </select>
+                                  {errOrg && <div className="error"> {errOrg} </div>}
+                              </div>
                         </div>
+                          <input type="submit" class="reg-button" value="REGISTER"/>
+                          {errForm && <div className="form-error"> {errForm} </div>}
+                      </form>
+                </div>
+              </div>
 
-                        <div class="reg-inputs">
-                            <label for="fname" >First Name</label>
-                            <input
-                            id="fname" name="FName"
-                            value = {fname}
-                            onChange = {(e) => setFName(e.target.value)}
-                            type="text"
-                            placeholder="Enter First Name"
-                            required
-                            onInvalid={e => e.target.setCustomValidity('Please enter First Name')}
-                            onInput={e => e.target.setCustomValidity('')}  />
-                            <br />
-                            {errFname && <div className="error"> {errFname} </div>}
-                        </div>
-                        <div class="reg-inputs">
-                            <label for="MI">Middle Initial</label>
-                            <input
-                            id="midi" name="MiddleInitial"
-                            value = {midi}
-                            onChange = {(e) => setMidI(e.target.value)}
-                            type="text"
-                            required
-                            onInvalid={e => e.target.setCustomValidity('Please enter Middle Initial')}
-                            onInput={e => e.target.setCustomValidity('')}
-                            placeholder="Enter Middle Initial"
-                            maxLength={2}
-                            />
-                            <br />
-                            {errMidi && <div className="error"> {errMidi} </div>}
-                        </div>
-                        <div class="reg-inputs">
-                            <label for="lname">Last Name</label>
-                            <input
-                            id="lname" name="LName"
-                            value = {lname}
-                            onChange = {(e) => setLName(e.target.value)}
-                            type="text"
-                            placeholder="Enter Last Name"
-                            required
-                            onInvalid={e => e.target.setCustomValidity('Please enter Last Name')}
-                            onInput={e => e.target.setCustomValidity('')}  />
-                            <br />
-                            {errLname && <div className="error"> {errLname} </div>}
-                        </div>
-
-                        <div className='reg-select'>           
-                          <div class="reg-inputs">
-                              <label for="Dept">Department</label>
-                              <select
-                              id="dept" name="Department"
-                              value = {dept}
-                              onChange={changeSelectOptionHandler}
-                              type="text"
-                              required
-                              placeholder="Enter Department">
-                                <option>- - -</option>
-                                <option>SEAITE</option>
-                                <option>SABH</option>
-                                <option>SEAS</option>
-                                <option>SHAS</option>
-                              </select>
-                              <br />
-                              {errDept && <div className="error"> {errDept} </div>}
-                          </div>
-
-                          <div class="reg-inputs">
-                              <label for="Org">Organization</label>
-                              <select id="org" name="Organization"
-                              onChange = {(e) => setOrg(e.target.value)}
-                              type="text"
-                              placeholder="Enter Organization">
-                                {orgs}
-                              </select>
-                              {errOrg && <div className="error"> {errOrg} </div>}
-                          </div>
-                        </div>  
-
-                    </div>
-                      <input type="submit" class="reg-button" value="REGISTER"/>
-                      {errForm && <div className="form-error"> {errForm} </div>}
-                  </form>
-
-            </div>
           </div>
-
-      </div>
-    </div>
-  </body>
+        </div>
+      </body>
+  </div>
   );
 }
 
