@@ -9,6 +9,7 @@ import HomepageAdmin from './pages/Homepage-Admin'
 import LandingPage from './pages/Landing';
 import MainForm from './pages/MainForm';
 import NotificationsPage from './pages/Notifications';
+import DetailedNotifications from './pages/Detailed-Notification';
 
 
 
@@ -33,6 +34,7 @@ function App() {
                 <Route path='/welcome-page' element = { <LandingPage/>}></Route>
                 <Route path='/Form' element={ <MainForm/> }></Route>  
                 <Route path='/Notifications' element={ <NotificationsPage/> }></Route>  
+                <Route path='/Notification_Details' element={ <DetailedNotifications/> }></Route> 
               </Routes>
 
         </BrowserRouter>
