@@ -2,23 +2,28 @@ import '../assets/scss/Detailed-Notifications.scss'
 const DetailedNotifications = () => {
     return ( 
         <div class="RD-Container">
+
+            <style>
+            @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Ink&display=swap');
+            </style>
+
             <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
-            <div id="btnBack" className="btnForm">
+            <div id="btnBack" className="RD-Btns">
                 <i class='bx bx-arrow-back' ></i>
                 <p>Back</p>
             </div>
 
             {/* RD Heading */}
-            <div>
+            <div className="RD-Header">
                 <h3>REQUEST DETAILS</h3>
-                <div value='1'>
-                    <p>PENDING</p> 0/2
+                <div id='RStatus1' className="RStatus">
+                    <p className="pending">PENDING</p> 0/2
                 </div>
-                <div value='2'>
-                    <p>PENDING</p> 1/2
+                <div id='RStatus2' className="RStatus">
+                    <p className="pending">PENDING</p> 1/2
                 </div>
-                <div value='3'>
-                    <p>REQUEST APPROVED</p>
+                <div id='RStatus3' className="RStatus">
+                    <p className="pending">REQUEST APPROVED</p>
                 </div>
             </div>
 
@@ -26,23 +31,27 @@ const DetailedNotifications = () => {
             <hr class="solid"/>
 
             {/* RD Content */}
-            <div>
+            <div classname="Status">
                 <div className="RDC-Header">
-                    <div>
-                        <i class='bx bxs-universal-access'/>
-                        <div>
-                            <p>Andrei Louis C. Pagalilauan</p>
-                            <i class='bx bx-envelope' ><p>1302281@usl.edu.ph</p></i>
-                        </div>
-                        <div>
-                            <p>SEAITE Department</p>
-                            <p>Student Officer</p>
+                    <div className="RDC-Details">
+                        <i id="Request_Icon"class='bx bxs-universal-access'/>
+                        
+                        <div className="r_name">
+                            <div>
+                                <p>Andrei Louis C. Pagalilauan</p>  
+                                <p id="r_deptrole">SEAITE Department | Student Officer</p>
+                            </div>
+                            <div className="r_email">
+                                <i class='bx bx-envelope'/>
+                                <p>1302281@usl.edu.ph</p>
+                            </div>
+
                         </div>
                     </div>
 
-                    <div>
+                    <div className="r_right">
                         <p>September 27, 2022</p>
-                        <i class='bx bx-envelope'/>
+                        <i class='bx bxs-info-square'></i>
                     </div>
                 </div>
 
@@ -51,9 +60,13 @@ const DetailedNotifications = () => {
                         <p>SUBJECT: Facility Request for Remedial Class</p>
                     </div>
                     <div>
-                        <p>PURPOSE:</p>
-                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a 
-                            typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>        
+                        <p className="b_title">PURPOSE:</p>
+                        <p>To whom it may concern, <br/>
+
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+                        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. 
+                        Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web 
+                        sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>        
                     </div>
                 </div>
             </div>
@@ -63,7 +76,7 @@ const DetailedNotifications = () => {
             <div>
                 <div className="RDA-Header">
                     <div>REQUEST OVERVIEW</div>
-                    <div>Attached Files<i class='bx bx-download'/></div>
+                    <div id="btnAttached" class="RD-Btns">Attached Files<i class='bx bx-download'/></div>
                 </div>
                 <div className="RDA-Body">
                     <p>Building: J-Building</p>
@@ -74,9 +87,9 @@ const DetailedNotifications = () => {
             </div>
             
             {/* RD Buttons */}
-            <div>
-                <button>Cancel Request</button>
-                <i class='bx bx-x-circle' ></i>
+            <div id="btnCancel" class="RD-Btns">
+                <p>Cancel Request</p>
+                <i class='bx bxs-x-circle'/>
             </div>
         </div>
      );
