@@ -12,7 +12,7 @@ function closeSide(){
 function openSide(){
     document.getElementById('sidebar').style.cssText = 'margin-left: 0';
     document.getElementById('close').style.cssText = 'margin-left: 0';
-    document.getElementById('open').style.cssText = 'opacity: 0%';
+    document.getElementById('open').style.cssText = 'display:hidden';
 }
 
 export default function TodoList() {

@@ -42,7 +42,7 @@ const MainForm=() =>{
         
             <div id='side'>
             </div>
-            <div className="form-container">
+            <div className="form_container">
 
                 <form>
                     <div id="btnBack" className="btnForm">
