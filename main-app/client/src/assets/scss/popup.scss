@@ -1,13 +1,28 @@
 @import 'var&mixins.scss';
 
-#popup_container {
-    width: 98vw;
-    height: 90vh;
+.testing-popup{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 94vh;
+  color: gray;
+
+  h1{
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  h2{
+    font-weight: lighter;
+    transition: 0.2s;
+  }
+}
+.popup_container { 
+    position: fixed;
     background-color: $color-blue;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-items: center;
+    flex-direction: column;
     transition: .5s;
 
     .p_close{
@@ -33,13 +48,9 @@
     }
   }
 
-  #open{
-    opacity: 100%;
-  }
-
   #popup {
+    width: 60vw;
     padding: 50px 150px;
-    margin: 0px 70px;
     background-color: #E6E6E6;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     border-radius: 10px;
@@ -48,18 +59,53 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 10px;
+
 
     .UserType{
       display: flex;
-      
+      height: 40vh;     
       .UserAdmin,.UserStudent,.UserFaculty{
-        margin:0px 25px;
-        background-color: lightgray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         padding: 25px;
-        border-radius: 25px;
+        width: 30vh;
+        border-radius: 10px;
+        transition: .5s;
+
+        img{
+          width: 200px;
+          height: 200px;
+          padding: 25px;
+          background-color: #fff;
+          border-radius: 150px;
+          margin-bottom: 15px;
+        }
+
         &:hover{
-          background-color: gray;
+          img{
+            border: #699BF7 solid 2px;
+          }
+          h2{
+            color: #699BF7;
+            font-weight: bold;
+          }
+          transition: 0.2s;
+          transform: scale(1.1);
         }
       }
+    }
+  }
+  #open_popup{
+    background-color: #fff;
+    opacity: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    transition: .5s ease;
+    &:hover{
+      transform: scale(1.1);
+      transition: .5s ease;
     }
   }

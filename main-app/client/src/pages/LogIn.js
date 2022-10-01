@@ -105,7 +105,6 @@ function App() {
               </div>
               <input type="submit" class="login-button" value="SIGN IN" />
             </form>
-                  
             </div>
           </div>
       </div>
