@@ -1,20 +1,16 @@
 
 
 .landingMain{
-    margin: 100px;
-
-    background: url('../images/Rectangle_16.svg'), url('../images/Rectangle_18.svg');
-    background-position-x: 100%;
-    background-position-y: 0px, 500px;
-    background-repeat: no-repeat,no-repeat;
-    background-size: 30%, 20%;
-    height: 100vh;
+    // background: url('../images/Rectangle_16.svg'), url('../images/Rectangle_18.svg');
+    // background-position-x: 100%;
+    // background-position-y: 0px, 500px;
+    // background-repeat: no-repeat,no-repeat;
+    // background-size: 30%, 20%;
 
     background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50px;
-
-
+    height: 80vh;
 }

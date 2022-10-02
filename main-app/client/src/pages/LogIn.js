@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../assets/scss/login.scss'
 import logo from '../assets/images/logo.png'
+import PopUp from './Popup'
 
 function App() {
   const [idnum, setIDNum] = useState('')
@@ -104,6 +105,7 @@ function App() {
                 </div>                
               </div>
               <input type="submit" class="login-button" value="SIGN IN" />
+              <PopUp/>
             </form>
             </div>
           </div>
