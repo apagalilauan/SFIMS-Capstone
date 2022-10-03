@@ -9,7 +9,8 @@ import LandingPage from './pages/Landing';
 import MainForm from './pages/MainForm';
 import NotificationsPage from './pages/Notifications';
 import DetailedNotifications from './pages/Detailed-Notification';
-import PopUp from './pages/Popup';
+import Setting_Popup from './pages/SettingPopup';
+
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -32,7 +33,7 @@ function App() {
                 <Route path='/Form' element={ <MainForm/> }></Route>  
                 <Route path='/Notifications' element={ <NotificationsPage/> }></Route>  
                 <Route path='/Notification_Details' element={ <DetailedNotifications/> }></Route>     
-                <Route path='/popup' element={ <PopUp/> }></Route> 
+                <Route path='/Popup' element={ <Setting_Popup/> }></Route>  
               </Routes>
 
         </BrowserRouter>

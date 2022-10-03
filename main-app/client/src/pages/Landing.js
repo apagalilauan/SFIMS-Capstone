@@ -1,15 +1,14 @@
 import '../global.scss';
 import '../assets/scss/landing.scss';
-import PopUp from './Popup';
+import User_Popup from './UserPopup';
 
 
 
 function LandingPage() {
     return (
         <div className='landingMain'>
-
             Sample Text
-            <PopUp/>
+            <User_Popup/>
         </div>
     );
   }//app end
